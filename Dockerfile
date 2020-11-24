@@ -1,5 +1,5 @@
-# use minimal jupyter base notebook
-FROM jupyter/base-notebook:latest
+# use ml jupyter base notebook
+FROM jupyter/tensorflow-notebook:latest
 
 # enable jupyterlab as default app
 ENV JUPYTER_ENABLE_LAB=true

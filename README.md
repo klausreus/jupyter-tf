@@ -4,18 +4,21 @@
 
 Python Data Analysis stack in a Docker container
 
+## Adapted from [martinclaus/py-da-stack](https://github.com/martinclaus/py-da-stack)
+
 ## How this works
-This image is based on the latest [jupyter/base-notebook](https://hub.docker.com/r/jupyter/base-notebook) image. These images are maintained by the [Project Jupyter](https://jupyter.org) at the [docker-stacks](https://github.com/jupyter/docker-stacks) GitHub repository and ensure a recent Jupyter environment that can run Jupyter Lab or Notebook server or behind a JupyterHub.
+This image is based on the latest [jupyter/tensorflow-notebook](https://hub.docker.com/r/jupyter/tensorflow-notebook) image. These images are maintained by the [Project Jupyter](https://jupyter.org) at the [docker-stacks](https://github.com/jupyter/docker-stacks) GitHub repository and ensure a recent Jupyter environment that can run Jupyter Lab or Notebook server or behind a JupyterHub.
 
 The additional packages that are installed via `conda` from the `conda-forge` channel are specified in the file [requirements.txt](requirements.txt).
 
+**! Not sure if that is still true: !**
 Every Sunday, 5:45 UTC, the image will be rebuild so that the package versions are kept up-to-date. To pin an envronment, you may tag the image you use for the analysis (see below). 
 
 ## How to use
 
 ### Use the pre-built Docker images with _Docker_
 
-You can use [docker images](https://hub.docker.com/r/martinclaus/py-da-stack) that come with a fully working Jupyter environment and run them with docker.
+You can use [docker images](https://hub.docker.com/repository/docker/klausreus/py-da-stack) that come with a fully working Jupyter environment and run them with docker.
 
 Assuming you want to expose your work directory to `/work` in the container, then run:
 ```shell

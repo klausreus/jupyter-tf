@@ -34,9 +34,9 @@ papermill
 pip
 pytest
 scipy
+scikit-learn
 seaborn
 seawater
-sklearn
 xarray
 xgcm
 xhistogram

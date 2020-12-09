@@ -36,6 +36,7 @@ pytest
 scipy
 seaborn
 seawater
+sklearn
 xarray
 xgcm
 xhistogram

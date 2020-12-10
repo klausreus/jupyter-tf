@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: docker_build_and_push
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the klausmaster branch
+  push:
+    branches: [ klausmaster ]
+    
+  pull_request:
+    branches: [ klausmaster ]
+    paths-ignore: [ README.md, LICENSE ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      -
+        name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: klausreus/jupyter:latest
+      -
+        name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}

@@ -20,3 +20,4 @@ RUN conda install -c conda-forge --yes --update-deps --file /tmp/requirements.tx
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
     
+RUN pip install tensorflow-addons    

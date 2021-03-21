@@ -14,7 +14,7 @@ RUN conda install -c conda-forge --yes --update-deps --file /tmp/requirements.tx
     pip install tensorflow-addons && \
     # Build Jupyterlab extensions
     jupyter labextension install -y --clean --no-build \
-        jupyterlab-jupytext dask-labextension && \
+        jupyterlab-jupytext dask-labextension jupyterlab-plotly && \
     jupyter lab build && \
     # clean conda cache, index and package tarballs
     conda clean -a && \

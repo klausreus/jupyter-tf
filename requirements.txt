@@ -32,7 +32,6 @@ pandas
 panel
 papermill
 pip
-plotly
 pytest
 python-graphviz
 scipy

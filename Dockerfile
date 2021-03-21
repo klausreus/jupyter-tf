@@ -11,11 +11,11 @@ ENV XDG_CACHE_HOME='${HOME}/.cache/'
 COPY requirements.txt /tmp/
 RUN conda install -c conda-forge --yes --update-deps --file /tmp/requirements.txt && \
     # Install pip-only packages
-    pip install tensorflow-addons && \
+    #pip install tensorflow-addons && \
     # Build Jupyterlab extensions
-    jupyter labextension install -y --clean --no-build \
-        jupyterlab-jupytext dask-labextension @pyviz/jupyterlab_pyviz && \
-    jupyter lab build && \
+    #jupyter labextension install -y --clean --no-build \
+     #   jupyterlab-jupytext dask-labextension @pyviz/jupyterlab_pyviz && \
+    #jupyter lab build && \
     # clean conda cache, index and package tarballs
     conda clean -a && \
     # fix file permissions

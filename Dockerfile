@@ -13,9 +13,9 @@ RUN conda install -c conda-forge --yes --update-deps --file /tmp/requirements.tx
     # Install pip-only packages
     #pip install tensorflow-addons && \
     # Build Jupyterlab extensions
-    #jupyter labextension install -y --clean --no-build \
-     #   jupyterlab-jupytext dask-labextension @pyviz/jupyterlab_pyviz && \
-    #jupyter lab build && \
+    jupyter labextension install -y --clean --no-build \
+        jupyterlab-jupytext dask-labextension @pyviz/jupyterlab_pyviz && \
+    jupyter lab build && \
     # clean conda cache, index and package tarballs
     conda clean -a && \
     # fix file permissions
